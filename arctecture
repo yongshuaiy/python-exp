@@ -1,0 +1,21 @@
+transformer-exp/
+├── main.py                 # 主程序入口
+├── train_better.py         # 改进配置训练脚本
+├── compare_ablation.py     # 消融实验对比分析
+├── config.yaml             # 基础配置文件
+├── config_better.yaml      # 改进配置文件
+├── requirements.txt        # 依赖包列表
+├── run.sh                 # 运行脚本
+├── src/                   # 源代码目录
+│   ├── __init__.py
+│   ├── config.py          # 配置管理
+│   ├── model.py           # Transformer模型定义
+│   ├── data_loader.py     # 数据加载和处理
+│   ├── train.py           # 训练逻辑
+│   ├── ablation.py        # 消融实验
+│   └── utils.py           # 工具函数
+└── results/               # 结果目录（自动生成）
+    ├── training_curve.png
+    ├── ablation_results.png
+    ├── ablation_comparison.png
+    └── configuration_recommendations.txt

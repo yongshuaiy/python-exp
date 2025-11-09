@@ -1,0 +1,6 @@
+torch>=2.0.0
+torchtext>=0.15.0
+numpy
+matplotlib
+tqdm
+PyYAML>=5.4.0
