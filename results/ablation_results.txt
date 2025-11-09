@@ -1,0 +1,23 @@
+Ablation Study Results
+==================================================
+Config: {'data': {'dataset': 'wikitext2', 'batch_size': 16, 'seq_len': 64, 'vocab_size': 1000, 'num_samples': 5000, 'max_train_tokens': 10000, 'max_val_tokens': 2000}, 'model': {'model_type': 'transformer', 'd_model': 128, 'num_layers': 6, 'num_heads': 8, 'd_ff': 512, 'max_seq_len': 0, 'dropout': 0.1, 'activation': 'gelu'}, 'training': {'epochs': 10, 'ablation_epochs': 5, 'learning_rate': 1e-05, 'weight_decay': 0.01, 'clip_grad_norm': 1.0, 'use_warmup': True, 'warmup_steps': 1000}, 'experiment': {'seed': 42, 'device': 'cuda', 'save_dir': 'results'}}
+
+
+POSITIONAL_ENCODING:
+------------------------------
+With PE - Final Loss: 5.6842
+Without PE - Final Loss: 5.6710
+
+ATTENTION_HEADS:
+------------------------------
+1 - Final Loss: 5.6645
+2 - Final Loss: 5.6666
+4 - Final Loss: 5.6669
+8 - Final Loss: 5.6671
+
+LAYER_DEPTH:
+------------------------------
+1 - Final Loss: 5.7736
+2 - Final Loss: 5.7378
+4 - Final Loss: 5.6988
+6 - Final Loss: 5.6671

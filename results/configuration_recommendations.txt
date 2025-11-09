@@ -1,0 +1,38 @@
+============================================================
+TRANSFORMER CONFIGURATION RECOMMENDATIONS
+============================================================
+
+Based on ablation study results, here are the optimal configurations:
+
+OVERALL BEST CONFIGURATION:
+------------------------------
+Configuration: attention_heads_1
+Validation Loss: 5.6645
+Full Model Loss: 5.6842
+Improvement: 0.35%
+
+COMPONENT-WISE RECOMMENDATIONS:
+------------------------------
+NOT RECOMMENDED Positional Encoding: AVOID (degrades performance)
+  - With PE: 5.6842
+  - Without PE: 5.6710
+
+BEST Attention Heads: 1
+  - Best loss: 5.6645
+  - 1: 5.6645
+  - 2: 5.6666
+  - 4: 5.6669
+  - 8: 5.6671
+
+BEST Layer Depth: 6
+  - Best loss: 5.6671
+  - 6: 5.6671
+  - 4: 5.6988
+  - 2: 5.7378
+  - 1: 5.7736
+
+RECOMMENDED CONFIGURATION:
+------------------------------
+use_positional_encoding: False
+attention_heads: 1
+layer_depth: 6
