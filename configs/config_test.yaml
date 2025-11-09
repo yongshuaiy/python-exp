@@ -1,0 +1,36 @@
+# 数据配置
+data:
+  dataset: "wikitext2"  # "wikitext2"
+  batch_size: 16
+  seq_len: 64
+  vocab_size: 1000   #词库数量
+  num_samples: 5000  #样本数量
+  max_train_tokens: 10000  # 仅使用1万个训练token
+  max_val_tokens: 2000     # 仅使用2千个验证token
+
+# 模型配置
+model:
+  model_type: "transformer"  #  "transformer_lm——只包含Encoder"/ "transformer——包含Encoder-Decoder"
+  d_model: 128
+  num_layers: 6
+  num_heads: 8
+  d_ff: 512
+  max_seq_len: 64
+  dropout: 0.1
+  activation: "gelu"    # 可选: "relu", "gelu", "tanh"
+
+# 训练配置
+training:
+  epochs: 10
+  ablation_epochs: 5
+  learning_rate: 0.00001
+  weight_decay: 0.01
+  clip_grad_norm: 1.0
+  use_warmup: true  # 新增：使用学习率预热
+  warmup_steps: 1000  # 新增：预热步数
+
+# 实验配置
+experiment:
+  seed: 42
+  device: "cuda"        # 可选: "cuda", "cpu"
+  save_dir: "results"

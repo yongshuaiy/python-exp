@@ -1,0 +1,37 @@
+# 数据配置
+data:
+  dataset: "wikitext2"  # "wikitext2"
+  batch_size: 16
+  seq_len: 64
+  vocab_size: 8000   #词库数量
+  max_train_tokens: 20000  # 仅使用50000个训练token
+  max_val_tokens: 5000     # 仅使用10000个验证token
+  num_samples: 10000    #合成样本数量，使用为kitext时不生效
+
+
+# 模型配置
+model:
+  model_type: "transformer"
+  d_model: 128
+  num_layers: 6
+  num_heads: 8
+  d_ff: 512
+  max_seq_len: 64
+  dropout: 0.1
+  activation: "relu"    # 可选: "relu", "gelu", "tanh"
+
+# 训练配置
+training:
+  epochs: 30
+  ablation_epochs: 10
+  learning_rate: 0.00001
+  weight_decay: 0.01
+  clip_grad_norm: 1.0
+  use_warmup: true # 新增：使用学习率预热
+  warmup_steps: 1000  # 新增：预热步数
+
+# 实验配置
+experiment:
+  seed: 42
+  device: "cuda"        # 可选: "cuda", "cpu"
+  save_dir: "results"
